@@ -1,0 +1,6 @@
+@mixin variables {
+    * {
+        --background-accent: hsl(250, 95%, 20%);
+        --background-color: black;
+    }
+}

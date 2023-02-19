@@ -1,0 +1,265 @@
+@use 'resources' as res;
+@use 'variables';
+
+@mixin raco-dark-mode {
+    @include variables.variables;
+    
+    #page {
+        background: linear-gradient(var(--background-accent) 0%, var(--background-color) 175px);
+    }
+    
+    div#barra ul#links {
+        background: black;
+        border-radius: 0 0 10px 10px;
+        padding: 0 0.5em;
+    }
+    
+    div.rightlinks {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+    
+    div#barra ul#eines img {
+        filter: invert(1);
+        height: 1em;
+        width: 1em;
+    }
+    
+    div#barra ul#eines li:nth-child(1) a[title*="Augmentar"] img {
+        content: res.feather-icon("zoom-in");
+    }
+    
+    div#barra ul#eines li:nth-child(1) a[title*="Disminuir"] img {
+        content: res.feather-icon("zoom-out");
+    }
+    
+    div#barra ul#eines li:nth-child(2) {
+        display: none;
+    }
+    
+    div#barra ul#eines li:nth-child(3) img {
+        content: res.feather-icon("info");
+    }
+    
+    div#barra ul#eines li:nth-child(4) img {
+        content: res.feather-icon("mail");
+    }
+    
+    div#barra ul#eines li:nth-child(5) img {
+        content: res.feather-icon("map");
+    }
+    
+    div#barra ul#idiomes {
+        padding: 0 0.5em
+    }
+    
+    div#barra ul#idiomes li {
+        line-height: normal;
+        padding-left: 0;
+    }
+    
+    div#barra ul#idiomes li.active {
+        display: none;
+    }
+    
+    div#barra ul#idiomes li {
+        border-left: none;
+    }
+    
+    div#barra ul#idiomes li a {
+        display: inline-block;
+        color: transparent !important;
+        background-color: white;
+        width: 1.6em;
+        height: 1em;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    
+    div#barra ul#idiomes li a[href*=ca] {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Catalonia.svg/1920px-Flag_of_Catalonia.svg.png");
+    }
+    
+    div#barra ul#idiomes li a[href*=es] {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Bandera_de_Espa%C3%B1a_%28sin_escudo%29.svg/1920px-Bandera_de_Espa%C3%B1a_%28sin_escudo%29.svg.png");
+    }
+    
+    div#barra ul#idiomes li a[href*=en] {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1920px-Flag_of_the_United_Kingdom_%281-2%29.svg.png");
+    }
+    
+    div#barra ul#eines {
+        background: transparent;
+        border-left: 0.2em var(--background-accent) solid;
+        margin-left: 0;
+        padding: 0;
+    }
+    
+    div.rightlinks {
+        width: auto;
+        background: black;
+        padding: 0;
+        border-radius: 0 0 10px 10px;
+    }
+    
+    .logos #logofib, .logos #logoupc {
+        display: none;
+    }
+    
+    .logos #titol {
+        padding-left: 0;
+        border-left: none;
+    }
+    
+    .cap .buscar form {
+        display: flex;
+        height: 2em;
+    }
+    
+    .cap .buscar #tipus_cerca, .cap .buscar #camp_cerca, .cap .buscar button {
+        background: black;
+        color: white;
+        border: 2px solid white;
+    }
+    
+    .cap .buscar #tipus_cerca {
+        border-radius: 2em 0 0 2em;
+        margin-right: 0.3em;
+        padding: 0 0.5em;
+        width: auto;
+    }
+    
+    .cap .buscar #camp_cerca {
+        border-right: none;
+        padding: 0 0.5em;
+        min-width: 0;
+    }
+    
+    .cap .buscar button {
+        position: static;
+        border-left: none;
+        border-radius: 0 2em 2em 0;
+        height: auto;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+    
+    .cap .buscar button .ui-icon {
+        margin: 0;
+        background: res.feather-icon("search");
+        background-size: cover;
+        filter: invert(1);
+        position: static;
+        width: 1.5em;
+        height: 1.5em;
+    }
+    
+    .cap .buscar button span .ui-icon {
+        display: none;
+    }
+    
+    .cap .buscar button span .ui-button-text {
+        display: none;
+    }
+    
+    #nav > li:first-child {
+        display: none;
+    }
+    
+    #nav > li {
+        background: var(--background-color);
+        border: 2px white solid;
+        border-left: none;
+        border-radius: 0;
+    }
+    
+    #nav > li:nth-child(2) {
+        border-radius: 10px 0 0 10px;
+        border-left: 2px white solid;
+    }
+    
+    #nav > li:last-child {
+        border-radius: 0 10px 10px 0;
+    }
+    
+    #nav > li a {
+        color: white;
+    }
+    
+    #nav > li.hover {
+        background: white;
+        border-bottom: 2px white solid;
+    }
+    
+    #nav > li.hover a, #nav > li.sel a {
+        color: black;
+    }
+    
+    #nav ul.subnav {
+        padding-left: 0;
+        border: 2px white solid;
+        border-radius: 10px;
+        background: black;
+        top: 2.5em !important;
+    }
+    
+    #nav ul.subnav li {
+        border-radius: 0;
+        background: none;
+        border-bottom: 2px white solid;
+    }
+    
+    #nav ul.subnav li:last-child {
+        border-bottom: none;
+    }
+    
+    #nav ul.subnav li a {
+        color: white;
+        background: none;
+        padding: 0.5em;
+    }
+    
+    #nav ul.subnav li:hover {
+        background: white;
+    }
+    
+    #nav ul.subnav li:hover a {
+        color: black;
+        text-decoration: none;
+    }
+    
+    .cap .usuari {
+        background: black;
+        border: white 2px solid;
+        border-radius: 10px;
+        bottom: -1px !important;
+    }
+    
+    .cap .usuari .pestanya_usuari {
+        background: none;
+        padding: 0.45em;
+    }
+    
+    .cap .usuari .nom a, .cap .usuari .nom a:visited {
+        color: white;
+    }
+    
+    .usuari .sortir, .usuari .sortir:hover {
+        padding: 0;
+        background: none;
+        display: flex;
+    }
+    
+    .usuari .sortir a, .usuari .sortir a {
+        font-size: 0 !important;
+        display: inline-block;
+        background: res.feather-icon("logout");
+        background-size: cover;
+        filter: invert(1);
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}

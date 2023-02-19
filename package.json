@@ -1,0 +1,14 @@
+{
+  "name": "raco-dark-mode",
+  "version": "2.0.0",
+  "description": "I want to study, not to get blind",
+  "author": "Nara Díaz Viñolas <me@rdvdev2.com>",
+  "scripts": {
+    "build": "sass --no-source-map src/main.user.scss main.user.css",
+    "clean": "del-cli main.user.css"
+  },
+  "devDependencies": {
+    "sass": "^1.58.3",
+    "del-cli": "^5.0.0"
+  }
+}

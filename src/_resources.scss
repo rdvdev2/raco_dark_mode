@@ -1,0 +1,3 @@
+@function feather-icon($name) {
+    @return url("https://raw.githubusercontent.com/feathericons/feather/master/icons/#{$name}.svg");
+}

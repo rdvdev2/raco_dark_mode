@@ -1,0 +1,13 @@
+/* ==UserStyle==
+@name           El Racó dark mode
+@namespace      github.com/rdvdev2
+@version        2.0.0
+@description    I want to study, not to get blind
+@author         rdvdev2
+==/UserStyle== */
+
+@use 'main' as *;
+
+@-moz-document domain("raco.fib.upc.edu") {
+    @include raco-dark-mode;
+}
