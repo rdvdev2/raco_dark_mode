@@ -13,6 +13,8 @@ npm run build
 ```
 You will find the UserCSS file in the root of the project.
 
+***Note:*** *You can clean the workspace with `npm run clean` and update the output on changes with `npm run watch`.*
+
 # Installation
 1. Install [Stylus](https://add0n.com/stylus.html) in your browser
 2. Open `main.user.css` with your browser
