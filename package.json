@@ -4,11 +4,19 @@
   "description": "I want to study, not to get blind",
   "author": "Nara Díaz Viñolas <me@rdvdev2.com>",
   "scripts": {
-    "build": "sass --no-source-map src/main.user.scss main.user.css",
-    "clean": "del-cli main.user.css"
+    "build": "sass -I src/utils --no-source-map src/main.user.scss main.user.css",
+    "clean": "del-cli main.user.css",
+    "watch": "npm-watch"
+  },
+  "watch": {
+    "build": {
+      "patterns": ["src"],
+      "extensions": "scss"
+    }
   },
   "devDependencies": {
+    "del-cli": "^5.0.0",
     "sass": "^1.58.3",
-    "del-cli": "^5.0.0"
+    "npm-watch": "^0.11.0"
   }
 }

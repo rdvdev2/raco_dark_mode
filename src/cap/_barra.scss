@@ -1,0 +1,82 @@
+@use 'resources' as res;
+
+@mixin -add-lang-icon($lang, $url) {
+    li a[href*="idioma=#{$lang}"] {
+        background-image: url($url);
+    }
+}
+
+@mixin -replace-tool-icon($anchor_title, $feather_icon) {
+    li a[title="#{$anchor_title}"] img {
+        content: res.feather-icon($feather_icon);
+    }
+}
+
+@mixin barra {
+    ul#links {
+        background: black;
+        border-radius: 0 0 10px 10px;
+        padding: 0 0.5em;
+    }
+
+    div.rightlinks {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        width: auto;
+        background: black;
+        padding: 0;
+        border-radius: 0 0 10px 10px;
+    }
+
+    ul#idiomes {
+        padding: 0 0.5em;
+    
+        li {
+            line-height: normal;
+            padding-left: 0;
+            border-left: none;
+        }
+
+        li.active {
+            display: none;
+        }
+
+        li a {
+            display: inline-block;
+            color: transparent !important;
+            background-color: white;
+            width: 1.6em;
+            height: 1em;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        @include -add-lang-icon("ca", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Catalonia.svg/1920px-Flag_of_Catalonia.svg.png");
+        @include -add-lang-icon("es", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Bandera_de_Espa%C3%B1a_%28sin_escudo%29.svg/1920px-Bandera_de_Espa%C3%B1a_%28sin_escudo%29.svg.png");
+        @include -add-lang-icon("en", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1920px-Flag_of_the_United_Kingdom_%281-2%29.svg.png");
+    }
+
+    ul#eines {
+        background: transparent;
+        border-left: 0.2em var(--background-accent) solid;
+        margin-left: 0;
+        padding: 0;
+
+        img {
+            filter: invert(1);
+            height: 1em;
+            width: 1em;
+        }
+
+        li:nth-child(2) {
+            display: none;
+        }
+
+        @include -replace-tool-icon("Augmentar lletres", "zoom-in");
+        @include -replace-tool-icon("Disminuir lletres", "zoom-out");
+        @include -replace-tool-icon("Informació", "info");
+        @include -replace-tool-icon("Contactar", "mail");
+        @include -replace-tool-icon("Mapa del web", "map"); 
+    }
+}
