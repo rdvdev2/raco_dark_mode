@@ -4,7 +4,7 @@
   "description": "I want to study, not to get blind",
   "author": "Nara Díaz Viñolas <me@rdvdev2.com>",
   "scripts": {
-    "build": "sass -I src/utils --no-source-map src/main.user.scss main.user.css",
+    "build": "sass --no-charset -I src/utils --no-source-map src/main.user.scss main.user.css",
     "clean": "del-cli main.user.css",
     "watch": "npm-watch"
   },
