@@ -3,6 +3,7 @@
 @use 'logos' as *;
 @use 'buscar' as *;
 @use 'nav' as *;
+@use 'usuari' as *;
 
 @mixin cap {
     div#barra {
@@ -22,34 +23,6 @@
     }
     
     .usuari {
-        background: black;
-        border: white 2px solid;
-        border-radius: 10px;
-        bottom: -1px !important;
-    }
-    
-    .usuari .pestanya_usuari {
-        background: none;
-        padding: 0.45em;
-    }
-    
-    .usuari .nom a, .usuari .nom a:visited {
-        color: white;
-    }
-    
-    .usuari .sortir, .usuari .sortir:hover {
-        padding: 0;
-        background: none;
-        display: flex;
-    }
-    
-    .usuari .sortir a, .usuari .sortir a {
-        font-size: 0 !important;
-        display: inline-block;
-        background: res.feather-icon("log-out");
-        background-size: cover;
-        filter: invert(1);
-        width: 1.5rem;
-        height: 1.5rem;
+        @include usuari;
     }
 }

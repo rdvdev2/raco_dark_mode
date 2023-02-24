@@ -1,0 +1,33 @@
+@use 'resources' as res;
+
+@mixin usuari {
+    background: black;
+    border: white 2px solid;
+    border-radius: 10px;
+    bottom: -1px !important;
+    
+    .pestanya_usuari {
+        background: none;
+        padding: 0.45em;
+    }
+    
+    .nom a, .nom a:visited {
+        color: white;
+    }
+    
+    .sortir, .sortir:hover {
+        padding: 0;
+        background: none;
+        display: flex;
+    }
+    
+    .sortir a, .sortir a {
+        font-size: 0 !important;
+        display: inline-block;
+        background: res.feather-icon("log-out");
+        background-size: cover;
+        filter: invert(1);
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
