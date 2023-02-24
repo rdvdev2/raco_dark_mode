@@ -1,0 +1,10 @@
+@mixin logos {
+    #logofib, #logoupc {
+        display: none;
+    }
+    
+    #titol {
+        padding-left: 0;
+        border-left: none;
+    }
+}

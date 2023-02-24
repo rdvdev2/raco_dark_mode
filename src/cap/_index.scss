@@ -1,5 +1,6 @@
 @use 'resources' as res;
 @use 'barra' as *;
+@use 'logos' as *;
 
 @mixin cap {
     div#barra {
@@ -7,14 +8,7 @@
     }
 
     .logos {
-        #logofib, #logoupc {
-            display: none;
-        }
-        
-        #titol {
-            padding-left: 0;
-            border-left: none;
-        }
+        @include logos;
     }
     
     .buscar form {
