@@ -80,6 +80,10 @@
         border-left: none;
         border-radius: 0;
     }
+
+    #nav > li.sel {
+        background: white;
+    }
     
     #nav > li:nth-child(2) {
         border-radius: 10px 0 0 10px;
