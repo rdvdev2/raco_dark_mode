@@ -1,4 +1,3 @@
-@use 'resources' as res;
 @use 'variables';
 @use 'cap' as *;
 
@@ -9,7 +8,5 @@
         background: linear-gradient(var(--background-accent) 0%, var(--background-color) 175px);
     }
     
-    .cap {
-        @include cap;
-    }
+    .cap { @include cap; }
 }

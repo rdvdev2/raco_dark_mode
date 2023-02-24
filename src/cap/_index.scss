@@ -1,4 +1,3 @@
-@use 'resources' as res;
 @use 'barra' as *;
 @use 'logos' as *;
 @use 'buscar' as *;
@@ -6,23 +5,9 @@
 @use 'usuari' as *;
 
 @mixin cap {
-    div#barra {
-        @include barra;
-    }
-
-    .logos {
-        @include logos;
-    }
-    
-    .buscar {
-        @include buscar;
-    }
-    
-    #nav {
-        @include nav;
-    }
-    
-    .usuari {
-        @include usuari;
-    }
+    div#barra { @include barra; }
+    .logos { @include logos; }
+    .buscar { @include buscar; }
+    #nav { @include nav; }
+    .usuari { @include usuari; }
 }
