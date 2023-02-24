@@ -2,6 +2,7 @@
 @use 'barra' as *;
 @use 'logos' as *;
 @use 'buscar' as *;
+@use 'nav' as *;
 
 @mixin cap {
     div#barra {
@@ -16,74 +17,8 @@
         @include buscar;
     }
     
-    #nav > li:first-child {
-        display: none;
-    }
-    
-    #nav > li {
-        background: var(--background-color);
-        border: 2px white solid;
-        border-left: none;
-        border-radius: 0;
-    }
-
-    #nav > li.sel {
-        background: white;
-    }
-    
-    #nav > li:nth-child(2) {
-        border-radius: 10px 0 0 10px;
-        border-left: 2px white solid;
-    }
-    
-    #nav > li:last-child {
-        border-radius: 0 10px 10px 0;
-    }
-    
-    #nav > li a {
-        color: white;
-    }
-    
-    #nav > li.hover {
-        background: white;
-        border-bottom: 2px white solid;
-    }
-    
-    #nav > li.hover a, #nav > li.sel a {
-        color: black;
-    }
-    
-    #nav ul.subnav {
-        padding-left: 0;
-        border: 2px white solid;
-        border-radius: 10px;
-        background: black;
-        top: 2.5em !important;
-    }
-    
-    #nav ul.subnav li {
-        border-radius: 0;
-        background: none;
-        border-bottom: 2px white solid;
-    }
-    
-    #nav ul.subnav li:last-child {
-        border-bottom: none;
-    }
-    
-    #nav ul.subnav li a {
-        color: white;
-        background: none;
-        padding: 0.5em;
-    }
-    
-    #nav ul.subnav li:hover {
-        background: white;
-    }
-    
-    #nav ul.subnav li:hover a {
-        color: black;
-        text-decoration: none;
+    #nav {
+        @include nav;
     }
     
     .usuari {

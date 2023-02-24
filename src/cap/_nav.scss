@@ -1,0 +1,71 @@
+@mixin nav {
+    > li {
+        background: var(--background-color);
+        border: 2px white solid;
+        border-left: none;
+        border-radius: 0;
+
+        &:first-child {
+            display: none;
+        }
+        
+        &:nth-child(2) {
+            border-radius: 10px 0 0 10px;
+            border-left: 2px white solid;
+        }
+        
+        &:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+
+        &.sel {
+            background: white;
+        }
+        
+        a {
+            color: white;
+        }
+        
+        &.hover {
+            background: white;
+            border-bottom: 2px white solid;
+        }
+        
+        &.hover a, &.sel a {
+            color: black;
+        }
+    }
+    
+    ul.subnav {
+        padding-left: 0;
+        border: 2px white solid;
+        border-radius: 10px;
+        background: black;
+        top: 2.5em !important;
+        
+        li {
+            border-radius: 0;
+            background: none;
+            border-bottom: 2px white solid;
+        }
+        
+        li:last-child {
+            border-bottom: none;
+        }
+        
+        li a {
+            color: white;
+            background: none;
+            padding: 0.5em;
+        }
+        
+        li:hover {
+            background: white;
+        }
+        
+        li:hover a {
+            color: black;
+            text-decoration: none;
+        }
+    }
+}
