@@ -1,6 +1,7 @@
 @use 'resources' as res;
 @use 'barra' as *;
 @use 'logos' as *;
+@use 'buscar' as *;
 
 @mixin cap {
     div#barra {
@@ -11,57 +12,8 @@
         @include logos;
     }
     
-    .buscar form {
-        display: flex;
-        height: 2em;
-    }
-    
-    .buscar #tipus_cerca, .buscar #camp_cerca, .buscar button {
-        background: black;
-        color: white;
-        border: 2px solid white;
-    }
-    
-    .buscar #tipus_cerca {
-        border-radius: 2em 0 0 2em;
-        margin-right: 0.3em;
-        padding: 0 0.5em;
-        width: auto;
-    }
-    
-    .buscar #camp_cerca {
-        border-right: none;
-        padding: 0 0.5em;
-        min-width: 0;
-    }
-    
-    .buscar button {
-        position: static;
-        border-left: none;
-        border-radius: 0 2em 2em 0;
-        height: auto;
-        width: auto;
-        display: flex;
-        align-items: center;
-        justify-items: center;
-    }
-    
-    .buscar button .ui-icon {
-        margin: 0;
-        background: res.feather-icon("search");
-        background-size: cover;
-        filter: invert(1);
-        position: static;
-        width: 1.5em;
-        height: 1.5em;
-    }
-    
-    .buscar button span .ui-icon {
-        display: none;
-    }
-    
-    .buscar button span .ui-button-text {
-        display: none;
+    .buscar {
+        @include buscar;
     }
     
     #nav > li:first-child {

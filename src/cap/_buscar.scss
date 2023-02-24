@@ -1,0 +1,52 @@
+@use 'resources' as res;
+
+@mixin buscar {
+    form {
+        display: flex;
+        height: 2em;
+    }
+    
+    #tipus_cerca, #camp_cerca, button {
+        background: black;
+        color: white;
+        border: 2px solid white;
+    }
+    
+    #tipus_cerca {
+        border-radius: 2em 0 0 2em;
+        margin-right: 0.3em;
+        padding: 0 0.5em;
+        width: auto;
+    }
+    
+    #camp_cerca {
+        border-right: none;
+        padding: 0 0.5em;
+        min-width: 0;
+    }
+    
+    button {
+        position: static;
+        border-left: none;
+        border-radius: 0 2em 2em 0;
+        height: auto;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+
+        .ui-icon {
+            margin: 0;
+            background: res.feather-icon("search");
+            background-size: cover;
+            filter: invert(1);
+            position: static;
+            width: 1.5em;
+            height: 1.5em;
+        }
+        
+        span .ui-icon, span .ui-button-text {
+            display: none;
+        }
+    }
+}
