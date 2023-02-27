@@ -1,0 +1,10 @@
+@use 'variables';
+@use 'cap' as *;
+
+@include variables.variables;
+
+#page {
+    background: linear-gradient(var(--background-accent) 0%, var(--background-color) 175px);
+}
+
+.cap { @include cap; }

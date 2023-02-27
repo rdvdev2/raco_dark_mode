@@ -7,8 +7,6 @@
 @license        GPL-3.0-only
 ==/UserStyle== */
 
-@use 'main' as *;
-
 @-moz-document domain("raco.fib.upc.edu") {
-    @include raco-dark-mode;
+  {{ main_css | safe | indent(2) }}
 }
