@@ -1,13 +1,14 @@
-'use strict';
+import gulp from 'gulp';
 
-const gulp = require('gulp');
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
 
-const sass = require('gulp-sass')(require('sass'));
-const nunjucks = require('gulp-nunjucks');
-const rename = require('gulp-rename');
+import nunjucks from 'gulp-nunjucks';
+import rename from 'gulp-rename';
 
-const fs = require('fs');
-const del = require('del');
+import fs from 'fs';
+import del from 'del';
 
 const scssSources = './src/**/*.scss';
 const scssUtilsSources = './src/utils';
@@ -15,14 +16,14 @@ const cssOutput = './main.css'
 const templateSource = './templates/main.user.css.njk';
 const userCssOutput = './main.user.css';
 
-function buildStyles() {
+export function buildStyles() {
   return gulp.src(scssSources)
     .pipe(sass.sync({includePaths: [scssUtilsSources], charset: false})
       .on('error', sass.logError))
     .pipe(gulp.dest('.'));
 }
 
-function buildUserStyles() {
+export function buildUserStyles() {
   return gulp.src(templateSource)
     .pipe(nunjucks.compile({
       'main_css': fs.readFileSync(cssOutput).toString()
@@ -31,13 +32,12 @@ function buildUserStyles() {
     .pipe(gulp.dest("."));
 }
 
-gulp.task('clean', function(cb) {
-  return del([cssOutput, userCssOutput], cb);
-})
+export function clean() {
+  return del([cssOutput, userCssOutput]);
+}
 
-exports.buildStyles = buildStyles;
-exports.buildUserStyles = buildUserStyles;
-exports.watch = function() {
+export function watch() {
   gulp.watch([scssSources, templateSource], exports.default);
 }
-exports.default = gulp.series(buildStyles, buildUserStyles);
+
+export default gulp.series(buildStyles, buildUserStyles);
