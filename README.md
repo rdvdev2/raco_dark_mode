@@ -7,13 +7,14 @@ This is an attempt at restyling `el Racó` to match (my) modern standards with U
 for web designer tears nor broken layouts.
 
 # Building
+You will need `node` and `gulp-cli` to build this project. Build with:
 ```sh
 npm install
-npm run build
+gulp
 ```
-You will find the UserCSS file in the root of the project.
+You will find the UserCSS file in the root of the project (`main.user.css`) as well as an equivalent vanilla CSS file (`main.css`).
 
-***Note:*** *You can clean the workspace with `npm run clean` and update the output on changes with `npm run watch`.*
+***Note:*** *You can clean the workspace with `gulp clean` and update the output on changes with `gulp watch`.*
 
 # Installation
 1. Install [Stylus](https://add0n.com/stylus.html) in your browser
