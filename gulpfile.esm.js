@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import data from 'gulp-data';
 
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
@@ -10,6 +11,7 @@ import rename from 'gulp-rename';
 import fs from 'fs';
 import del from 'del';
 
+const packageFile = './package.json';
 const scssSources = './src/**/*.scss';
 const scssUtilsSources = './src/utils';
 const cssOutput = './main.css'
@@ -25,11 +27,26 @@ export function buildStyles() {
 
 export function buildUserStyles() {
   return gulp.src(templateSource)
-    .pipe(nunjucks.compile({
-      'main_css': fs.readFileSync(cssOutput).toString()
-    }))
+    .pipe(data(getUserStylesData))
+    .pipe(nunjucks.compile({}, {autoescape: false}))
     .pipe(rename(userCssOutput))
     .pipe(gulp.dest("."));
+}
+
+function getUserStylesData() {
+  const packageJson = JSON.parse(fs.readFileSync(packageFile));
+  const mainCss = fs.readFileSync(cssOutput).toString();
+
+  return {
+    'name': packageJson.userCss.name,
+    'namespace': packageJson.userCss.namespace,
+    'version': packageJson.version,
+    'description': packageJson.description,
+    'author': packageJson.author,
+    'license': packageJson.license,
+    'domain': packageJson.userCss.domain,
+    'main_css': mainCss,
+  };
 }
 
 export function clean() {

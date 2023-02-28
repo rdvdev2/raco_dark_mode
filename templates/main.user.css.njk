@@ -1,12 +1,12 @@
 /* ==UserStyle==
-@name           el Racó Dark Mode
-@namespace      github.com/rdvdev2
-@version        2.0.0
-@description    I want to study, not to get blind
-@author         rdvdev2
-@license        GPL-3.0-only
+@name           {{ name }}
+@namespace      {{ namespace }}
+@version        {{ version }}
+@description    {{ description }}
+@author         {{ author }}
+@license        {{ license }}
 ==/UserStyle== */
 
-@-moz-document domain("raco.fib.upc.edu") {
-  {{ main_css | safe | indent(2) }}
+@-moz-document domain("{{ domain }}") {
+  {{ main_css | indent(2) }}
 }
